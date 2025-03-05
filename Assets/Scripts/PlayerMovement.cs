@@ -32,12 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement()
     {
+        // uses the new input system to read the value of the "Movement" tab in the settings, then moves the player to the assigned direction depending on the button pressed using the speed variable
         Vector2 dir = MovementInput.ReadValue<Vector2>();
         transform.position += new Vector3(dir.x, 0, dir.y) * speed * Time.deltaTime;
     }
 
     public void Dash()
     {
+        // looks if the last attack has been longer ago than the cooldown, if it is then the player dashes towards movement direction
         if (Time.time - lastAttack< attackCooldown) return;
         Vector2 dir = MovementInput.ReadValue<Vector2>();
         Vector3 movement = new Vector3(dir.x, 0, dir.y);
