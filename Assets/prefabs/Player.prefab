@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 7669961875600579349}
   - component: {fileID: 1045263030624618661}
   - component: {fileID: 6216444265943312497}
+  - component: {fileID: 8954612773163038276}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -289,3 +290,24 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!65 &8954612773163038276
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7860276848394583526}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.8495502, z: 1}
+  m_Center: {x: 0, y: 0.020005226, z: 0}

@@ -9,6 +9,14 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  transform.position+= 
+
+        transform.position += transform.forward * speed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+      
+      if (other.tag != gameObject.tag)
+         Destroy(gameObject);
     }
 }

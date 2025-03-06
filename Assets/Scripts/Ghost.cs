@@ -7,9 +7,12 @@ public class Ghost : MonoBehaviour
 {
     [SerializeField] GameObject projectile;
     [SerializeField] int speed;
+    [SerializeField] float timeToShoot;
     [SerializeField] Transform[] attackPattern;
+   
 
     private GameObject playerRef;
+    private bool canMove = true;
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,20 +37,28 @@ public class Ghost : MonoBehaviour
     private void GhostMovement()
     {
         //continuously stalks the player
-        transform.position = Vector3.MoveTowards(transform.position, playerRef.transform.position,speed * Time.deltaTime);
+        if (canMove)
+        transform.position = Vector3.MoveTowards(transform.position, playerRef.transform.position, speed * Time.deltaTime);
+    
+        
     }
 
     private IEnumerator ProjectileAttack()
     {
         while (true)
         {
-            WaitForSeconds wait = new WaitForSeconds(3);
+            WaitForSeconds wait = new WaitForSeconds(timeToShoot);
+            yield return wait;
+            canMove = false;
             for(int i = 0; i < attackPattern.Length; i++)
             {
-                Instantiate(projectile, attackPattern[i].position,Quaternion.identity);
+               var inst = Instantiate(projectile, attackPattern[i].position,Quaternion.identity);
+                inst.transform.rotation = attackPattern[i].transform.rotation;
             }
-
-            yield return wait;
+            //make this until the animation is done playing
+            yield return new WaitForSeconds(.3f);
+            canMove = true;
+            
         }
     }
 

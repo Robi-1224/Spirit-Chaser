@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     public void Dash()
     {
         // looks if the last attack has been longer ago than the cooldown, if it is then the player dashes towards movement direction
+        // the if statement is from a stackOverflow comment
         if (Time.time - lastAttack< attackCooldown) return;
         Vector2 dir = MovementInput.ReadValue<Vector2>();
         Vector3 movement = new Vector3(dir.x, 0, dir.y);
@@ -47,6 +48,10 @@ public class PlayerMovement : MonoBehaviour
         lastAttack = Time.time;
     }
 
-     
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag != gameObject.tag)
+            Destroy(gameObject);
+    }
 
 }
