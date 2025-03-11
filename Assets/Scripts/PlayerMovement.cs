@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag != gameObject.tag)
+        if (other.gameObject.CompareTag("Enemy"))
             Destroy(gameObject);
     }
 

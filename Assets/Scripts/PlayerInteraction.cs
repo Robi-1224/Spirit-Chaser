@@ -2,17 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour
+public class PlayerInteraction : RitualObject
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject heldObject;
+
+    public void Interaction(GameObject other)
     {
-        
+      
+
+       if (other.CompareTag("Held item"))
+       {
+            heldObject = other.gameObject;
+       }
+       else if(other.CompareTag("No held item ritual"))
+       {
+            ItemBehaviour();
+       }
+       else if(other.CompareTag("Held item ritual") && heldObject!= null)
+       {
+            ItemBehaviour();
+       }
+       else
+       {
+            Debug.Log("Need the held item");
+       }
+
+      
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+       Interaction(other.gameObject);
     }
 }

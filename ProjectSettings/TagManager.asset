@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Held item ritual
+  - No held item ritual
+  - Held item
   layers:
   - Default
   - TransparentFX
