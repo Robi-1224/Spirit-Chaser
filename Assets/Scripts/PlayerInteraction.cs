@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInteraction : RitualObject
+public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] GameObject heldObject;
 
     private RoomManager roomManager;
 
     RaycastHit hit;
+   
 
     private void Awake()
     {
@@ -20,8 +21,8 @@ public class PlayerInteraction : RitualObject
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward) * 6;
         Physics.Raycast(transform.position,forward,out hit);
-        var hitCollider = hit.collider.gameObject;
-        
+        GameObject hitCollider = hit.collider.gameObject;
+
         if (hitCollider.CompareTag("Held item"))
         { 
             hitCollider.transform.parent = heldObject.transform;
@@ -46,6 +47,15 @@ public class PlayerInteraction : RitualObject
             Debug.Log("Need the held item");
         }
     }
-    
+
+    private void ItemBehaviour()
+    {
+        GameObject hitCollider = hit.collider.gameObject;
+        switch(hitCollider.name)
+        {
+            case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour(); return;
+        }
+    }
+
    
 }

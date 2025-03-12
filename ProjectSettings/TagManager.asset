@@ -8,6 +8,7 @@ TagManager:
   - Held item ritual
   - No held item ritual
   - Held item
+  - Clear room door
   layers:
   - Default
   - TransparentFX

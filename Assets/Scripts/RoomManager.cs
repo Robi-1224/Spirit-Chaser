@@ -6,10 +6,13 @@ public class RoomManager : MonoBehaviour
 {
     public List<GameObject> ritualList = new List<GameObject>();
     [SerializeField] GameObject clearRoomDoor;
+
+    private GameObject[] ghost;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         StartCoroutine(Traps());
+        ghost = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -22,7 +25,7 @@ public class RoomManager : MonoBehaviour
     {
         switch(ritualList.Count)
         {
-            case <= 0 : clearRoomDoor.SetActive(true); break;
+            case <= 0 :foreach(GameObject ghost in ghost) Destroy(ghost); clearRoomDoor.SetActive(true); break;
         }
     }
 

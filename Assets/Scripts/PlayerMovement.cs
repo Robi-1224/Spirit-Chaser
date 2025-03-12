@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // looks if the last attack has been longer ago than the cooldown, if it is then the player dashes towards movement direction
         // the if statement is from a stackOverflow comment
-        if (Time.time - lastAttack< attackCooldown) return;
+        if (Time.time - lastAttack < attackCooldown) return;
         Vector2 dir = MovementInput.ReadValue<Vector2>();
         Vector3 movement = new Vector3(dir.x, 0, dir.y);
         rb.AddForce(movement * dashForce, ForceMode.Impulse);
@@ -58,8 +58,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-            Destroy(gameObject);
+      if (other.gameObject.CompareTag("Enemy"))
+      {
+        Destroy(gameObject);
+
+      }
+      else if(other.gameObject.CompareTag("Clear room door"))
+      {
+         Debug.Log("room cleared");
+      }
     }
+
 
 }
