@@ -5,14 +5,11 @@ using UnityEngine;
 public class Candle : RitualObject
 {
     // Start is called before the first frame update
-    void Start()
+    public override void ItemBehaviour()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        var fire = GetComponentInChildren<GameObject>();
+        fire.SetActive(true);
+        Debug.Log("Candle override");
         
     }
 }
