@@ -6,8 +6,10 @@ public class RoomManager : MonoBehaviour
 {
     public List<GameObject> ritualList = new List<GameObject>();
     [SerializeField] GameObject clearRoomDoor;
+    [SerializeField] List<GameObject> traps = new List<GameObject>();
 
     private GameObject[] ghost;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -33,10 +35,17 @@ public class RoomManager : MonoBehaviour
     {
         while (true)
         {
-            WaitForSeconds wait = new WaitForSeconds(1);
+            WaitForSeconds wait = new WaitForSeconds(5);
+            for (int i = 0; i < traps.Count; i++)
+            {
+                traps[i].SetActive(true);
+                yield return wait;
+                traps[i].SetActive(false);
+                yield return wait;
+              
+            
+            }
 
-
-            yield return wait;
         }
     }
 }
