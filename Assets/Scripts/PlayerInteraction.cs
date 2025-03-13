@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] GameObject heldObject;
+    [SerializeField] TextMeshProUGUI errorText;
+    [SerializeField] GameObject inventoryHeldItem;
 
     private RoomManager roomManager;
 
@@ -19,6 +22,7 @@ public class PlayerInteraction : MonoBehaviour
     }
     public void interact()
     {
+        errorText.gameObject.SetActive(false);
         Vector3 forward = transform.TransformDirection(Vector3.forward) * 6;
         Physics.Raycast(transform.position,forward,out hit);
         GameObject hitCollider = hit.collider.gameObject;
@@ -28,23 +32,25 @@ public class PlayerInteraction : MonoBehaviour
             hitCollider.transform.parent = heldObject.transform;
             hitCollider.transform.localPosition = Vector3.zero;
             heldObject = hitCollider;
+            inventoryHeldItem.SetActive(true);
         }
         else if (hitCollider.CompareTag("No held item ritual"))
         {
             Debug.Log("No held item ritual");
-            roomManager.ritualList.Remove(hit.collider.gameObject);
+            roomManager.ritualList.Remove(hitCollider);
             ItemBehaviour();
            
         }
         else if (hitCollider.CompareTag("Held item ritual") && heldObject.tag != "Untagged")
         {
             Debug.Log("Item removed");
-            roomManager.ritualList.Remove(hit.collider.gameObject);
+            roomManager.ritualList.Remove(hitCollider);
             ItemBehaviour();
         }
-        else
+        else if(hitCollider.tag != "Enemy")
         {
-            Debug.Log("Need the held item");
+            errorText.text = "You need the held item for that!";
+            errorText.gameObject.SetActive(true);
         }
     }
 

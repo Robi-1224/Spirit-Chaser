@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
     public List<GameObject> ritualList = new List<GameObject>();
+    public TextMeshProUGUI objectiveLeftText;
+
     [SerializeField] GameObject clearRoomDoor;
     [SerializeField] List<GameObject> traps = new List<GameObject>();
 
@@ -20,12 +23,14 @@ public class RoomManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ritual();
+        Ritual();  
     }
 
     private void Ritual()
     {
-        switch(ritualList.Count)
+        objectiveLeftText.text = ritualList.Count.ToString();
+
+        switch (ritualList.Count)
         {
             case <= 0 :foreach(GameObject ghost in ghost) Destroy(ghost); clearRoomDoor.SetActive(true); break;
         }
