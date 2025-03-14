@@ -20,6 +20,12 @@ public class PlayerInteraction : MonoBehaviour
        
        roomManager= FindAnyObjectByType<RoomManager>();
     }
+
+    private void Update()
+    {
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * 6;
+        Debug.DrawRay(transform.position, forward, Color.green);
+    }
     public void interact()
     {
         errorText.gameObject.SetActive(false);

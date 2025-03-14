@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int speed;
     [SerializeField] int dashForce;
     [SerializeField] int rotationSpeed;
+    [SerializeField] GameObject gameOverPanel;
 
     private float lastAttack;
     private float attackCooldown = 1f;
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     {
       if (other.gameObject.CompareTag("Enemy"))
       {
+        gameOverPanel.SetActive(true);
         Destroy(gameObject);
 
       }
