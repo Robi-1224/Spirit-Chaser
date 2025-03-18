@@ -8,15 +8,17 @@ public class Ghost : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] int speed;
     [SerializeField] float timeToShoot;
+    [SerializeField] int rotationSpeed;
     [SerializeField] Transform[] attackPattern;
    
-
+    private Animator animator;
     private GameObject playerRef;
     private bool canMove = true;
     // Start is called before the first frame update
     void Awake()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
+        animator = GetComponent<Animator>();
 
         if(projectile != null)
         {
@@ -24,7 +26,7 @@ public class Ghost : MonoBehaviour
         }
         else
         {
-            //melee attack ienumerator
+          StartCoroutine(MeleeAttack());
         }
     }
 
@@ -37,10 +39,16 @@ public class Ghost : MonoBehaviour
     private void GhostMovement()
     {
         //continuously stalks the player
+        var move = Vector3.MoveTowards(transform.position, playerRef.transform.position, speed * Time.deltaTime);
+
         if (canMove)
-        transform.position = Vector3.MoveTowards(transform.position, playerRef.transform.position, speed * Time.deltaTime);
-    
-        
+        transform.position = move;
+
+        if (move != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(-playerRef.transform.position, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+        }
     }
 
     private IEnumerator ProjectileAttack()
@@ -59,6 +67,19 @@ public class Ghost : MonoBehaviour
             yield return new WaitForSeconds(.3f);
             canMove = true;
             
+        }
+    }
+
+    private IEnumerator MeleeAttack()
+    {
+        while (true)
+        {
+            WaitForSeconds wait = new WaitForSeconds(timeToShoot);
+            yield return wait;
+
+            animator.SetTrigger("melee");
+            new WaitForSeconds(1);
+            // lanch the ghost forward
         }
     }
 
