@@ -9,27 +9,25 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] GameObject heldObject;
     [SerializeField] TextMeshProUGUI errorText;
     [SerializeField] GameObject inventoryHeldItem;
-
-    private RoomManager roomManager;
+    [SerializeField] int interactionRange;
 
     RaycastHit hit;
-   
+    private RoomManager roomManager;
 
     private void Awake()
-    {
-       
+    { 
        roomManager= FindAnyObjectByType<RoomManager>();
     }
 
     private void Update()
     {
-        Vector3 forward = transform.TransformDirection(Vector3.forward) * 6;
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * interactionRange;
         Debug.DrawRay(transform.position, forward, Color.green);
     }
     public void interact()
     {
         errorText.gameObject.SetActive(false);
-        Vector3 forward = transform.TransformDirection(Vector3.forward) * 6;
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * interactionRange;
         Physics.Raycast(transform.position,forward,out hit);
         GameObject hitCollider = hit.collider.gameObject;
 
@@ -42,20 +40,17 @@ public class PlayerInteraction : MonoBehaviour
         }
         else if (hitCollider.CompareTag("No held item ritual"))
         {
-            Debug.Log("No held item ritual");
             roomManager.ritualList.Remove(hitCollider);
             ItemBehaviour();
            
         }
         else if (hitCollider.CompareTag("Held item ritual") && heldObject.tag != "Untagged")
         {
-            Debug.Log("Item removed");
             roomManager.ritualList.Remove(hitCollider);
             ItemBehaviour();
         }
         else if(hitCollider.tag != "Enemy")
         {
-            errorText.text = "You need the held item for that!";
             errorText.gameObject.SetActive(true);
         }
     }

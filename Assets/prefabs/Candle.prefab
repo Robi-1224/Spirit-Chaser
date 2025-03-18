@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6438932726852838203}
   - component: {fileID: 6443331637226067803}
   - component: {fileID: 6540151915119792987}
-  - component: {fileID: 8380910171310733478}
   - component: {fileID: 6452633263238103628}
+  - component: {fileID: 6790127861308917786}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Held item ritual
@@ -87,28 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8380910171310733478
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039900040568048256}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8631012603498426806, guid: 45d7e9d9a7529a54391b9da9a8db4c09, type: 3}
 --- !u!114 &6452633263238103628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +99,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27bd8995612dd044fa9cdf182fa45dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6790127861308917786
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039900040568048256}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.17120865, y: 0.46533754, z: 0.17119066}
+  m_Center: {x: 0.000008996576, y: 0.23327531, z: 0}
 --- !u!1001 &8259207719872156972
 PrefabInstance:
   m_ObjectHideFlags: 0
