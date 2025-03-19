@@ -47,10 +47,7 @@ public class RoomManager : MonoBehaviour
                 yield return wait;
                 traps[i].SetActive(false);
                 yield return wait;
-              
-            
             }
-
         }
     }
 }

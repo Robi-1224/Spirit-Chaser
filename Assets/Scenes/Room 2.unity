@@ -2118,38 +2118,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1598602310 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 870132404900320652, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
-  m_PrefabInstance: {fileID: 6530834979095241634}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1598602315
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598602310}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!1 &1698004934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,13 +2443,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5282312095406160508, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282312095406160508, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875250277860340034, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
+      propertyPath: dashForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875250277860340034, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
+      propertyPath: rotationSpeed
+      value: 50000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 870132404900320652, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1598602315}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
 --- !u!1 &7062806617601732429 stripped
 GameObject:
@@ -2502,7 +2483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 799905148890698841, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 799905148890698841, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: m_LocalPosition.z
