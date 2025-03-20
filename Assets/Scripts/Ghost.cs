@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.EditorCoroutines.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,10 +14,12 @@ public class Ghost : MonoBehaviour
 
     [SerializeField] GameObject projectile;
     [SerializeField] Transform[] attackPattern;
-   
+
     private Animator animator;
     private GameObject playerRef;
     private Rigidbody rb;
+
+    private Vector3 targetPos;
 
     private bool canMove = true;
     // Start is called before the first frame update
@@ -32,8 +35,9 @@ public class Ghost : MonoBehaviour
         }
         else
         {
-          StartCoroutine(MeleeAttack());
+            StartCoroutine(MeleeAttack());
         }
+
     }
 
     // Update is called once per frame
@@ -46,16 +50,13 @@ public class Ghost : MonoBehaviour
     {
         //continuously stalks the player
         Vector3 move = Vector3.MoveTowards(transform.position, playerRef.transform.position, speed * Time.deltaTime);
-       
+        targetPos = playerRef.transform.position - transform.position;
+
+        Quaternion lookRotation = Quaternion.LookRotation(targetPos, Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, rotationSpeed);
 
         if (canMove)
-        transform.position = move;
-
-        if (move != Vector3.zero)
-        {
-            Quaternion lookRotation = Quaternion.LookRotation(-playerRef.transform.position, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation,lookRotation, rotationSpeed * Time.deltaTime);
-        }
+        transform.position = move;    
     }
 
     private IEnumerator ProjectileAttack()
@@ -77,15 +78,21 @@ public class Ghost : MonoBehaviour
     
     private IEnumerator MeleeAttack()
     {
+        // yielding bool prevents the loop to play multiple times/ stack, helps make the dash timing consistent
+        bool yielding;
         while (true)
         {
-            WaitForSeconds wait = new WaitForSeconds(timeToShoot);
-            yield return wait;
+            yielding = true;
 
-            animator.SetTrigger("melee");
-            yield return new WaitForSeconds(1.3f);
-         
-          //  rb.AddForce(-playerRef.transform.position * 1, ForceMode.Impulse);
+            if (yielding)
+            {
+                WaitForSeconds wait = new WaitForSeconds(timeToShoot);
+                yield return wait;
+                animator.SetTrigger("melee");
+                yield return new WaitForSeconds(1.15f);
+                rb.AddForce(targetPos * dashForce, ForceMode.Impulse);
+                yielding = false;
+            }
         }
     }
 

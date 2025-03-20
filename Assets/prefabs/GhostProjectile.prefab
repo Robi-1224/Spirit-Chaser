@@ -165,7 +165,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &7489034235923658328
 MonoBehaviour:
@@ -179,9 +179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e54d90a5ec8e34e9c17a04e746e4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 7510455071016038446, guid: 194851a13d4b72f4083a4ece94a47702, type: 3}
   speed: 2
   timeToShoot: 3
+  rotationSpeed: 900
+  dashForce: 0
+  projectile: {fileID: 7510455071016038446, guid: 194851a13d4b72f4083a4ece94a47702, type: 3}
   attackPattern:
   - {fileID: 5019859270909634146}
   - {fileID: 2047846016705456835}

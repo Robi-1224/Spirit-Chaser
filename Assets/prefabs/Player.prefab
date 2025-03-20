@@ -110,7 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   dashForce: 5
-  rotationSpeed: 800
+  rotationSpeed: 900
+  gameOverPanel: {fileID: 0}
 --- !u!114 &5236998911212953625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +127,7 @@ MonoBehaviour:
   heldObject: {fileID: 6847802030610904381}
   errorText: {fileID: 0}
   inventoryHeldItem: {fileID: 0}
+  interactionRange: 0
 --- !u!114 &6216444265943312497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,8 +265,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.8495502, z: 1}
-  m_Center: {x: 0, y: 0.020005226, z: 0}
+  m_Size: {x: 1, y: 2.1125715, z: 1}
+  m_Center: {x: -0, y: 1.2273756, z: -0}
 --- !u!1001 &2538967956466705936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,7 +293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466174982370493814, guid: 7577e3de9babd604d9880ded032d1752, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.195
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 466174982370493814, guid: 7577e3de9babd604d9880ded032d1752, type: 3}
       propertyPath: m_LocalPosition.z
@@ -329,7 +331,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: G1_Yellow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 466174981629265458, guid: 7577e3de9babd604d9880ded032d1752, type: 3}
+    - {fileID: 466174982370493813, guid: 7577e3de9babd604d9880ded032d1752, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2657898691906824598, guid: 7577e3de9babd604d9880ded032d1752, type: 3}
     m_AddedGameObjects: []
