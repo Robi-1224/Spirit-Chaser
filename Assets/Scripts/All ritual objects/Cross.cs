@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Cross : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    float xAngle = 180;
+    public void ItemBehaviour()
+    {    
+        transform.eulerAngles += new Vector3(xAngle,0, 0);
     }
 }

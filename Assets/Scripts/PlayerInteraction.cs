@@ -18,7 +18,11 @@ public class PlayerInteraction : MonoBehaviour
     { 
        roomManager= FindAnyObjectByType<RoomManager>();
     }
-
+    private void Update()
+    {
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * interactionRange;
+        Debug.DrawRay(transform.position, forward, Color.green);
+    }
     public void interact()
     {
         errorText.gameObject.SetActive(false);
@@ -33,18 +37,12 @@ public class PlayerInteraction : MonoBehaviour
             heldObject = hitCollider;
             inventoryHeldItem.SetActive(true);
         }
-        else if (hitCollider.CompareTag("No held item ritual"))
-        {
-            roomManager.ritualList.Remove(hitCollider);
-            ItemBehaviour();
-           
-        }
-        else if (hitCollider.CompareTag("Held item ritual") && heldObject.tag != "Untagged")
+        else if (hitCollider.CompareTag("Held item ritual") && heldObject.tag != "Untagged" || hitCollider.CompareTag("No held item ritual"))
         {
             roomManager.ritualList.Remove(hitCollider);
             ItemBehaviour();
         }
-        else if(hitCollider.tag != "Enemy")
+        else if(hitCollider.CompareTag("Held item ritual") && heldObject.tag == "Untagged")
         {
             errorText.gameObject.SetActive(true);
         }
@@ -56,6 +54,8 @@ public class PlayerInteraction : MonoBehaviour
         switch(hitCollider.name)
         {
             case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour(); return;
+
+            case "Cross": hitCollider.GetComponent<Cross>().ItemBehaviour(); return;
         }
     }
 

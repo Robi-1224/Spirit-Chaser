@@ -11,6 +11,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject clearRoomDoor;
     [SerializeField] List<GameObject> traps = new List<GameObject>();
 
+    [SerializeField] float timeToActivate;
+
     private GameObject[] ghost;
     
     // Start is called before the first frame update
@@ -40,7 +42,7 @@ public class RoomManager : MonoBehaviour
     {
         while (true)
         {
-            WaitForSeconds wait = new WaitForSeconds(5);
+            WaitForSeconds wait = new WaitForSeconds(timeToActivate);
             for (int i = 0; i < traps.Count; i++)
             {
                 traps[i].SetActive(true);
