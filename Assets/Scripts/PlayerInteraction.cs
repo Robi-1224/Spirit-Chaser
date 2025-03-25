@@ -6,13 +6,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField] GameObject heldObject;
+    public GameObject heldObject;
+
     [SerializeField] TextMeshProUGUI errorText;
     [SerializeField] GameObject inventoryHeldItem;
     [SerializeField] int interactionRange;
 
     RaycastHit hit;
-    private RoomManager roomManager;
+    protected RoomManager roomManager;
 
     private void Awake()
     { 
@@ -56,6 +57,8 @@ public class PlayerInteraction : MonoBehaviour
             case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour(); return;
 
             case "Cross": hitCollider.GetComponent<Cross>().ItemBehaviour(); return;
+
+            case "Voodoo": hitCollider.GetComponent<Voodoo>().ItemBehaviour(); return;
         }
     }
 
