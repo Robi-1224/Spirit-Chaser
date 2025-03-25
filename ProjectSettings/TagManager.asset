@@ -9,6 +9,7 @@ TagManager:
   - No held item ritual
   - Held item
   - Clear room door
+  - enviornment
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Camera
   - 
   - 
   - 
