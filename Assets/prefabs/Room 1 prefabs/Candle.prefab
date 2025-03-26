@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6540151915119792987}
   - component: {fileID: 6452633263238103628}
   - component: {fileID: 6790127861308917786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Candle
   m_TagString: Held item ritual
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -131,6 +131,10 @@ PrefabInstance:
     - target: {fileID: 6255064434615560082, guid: e4738207e829d924a8be902a855f7a24, type: 3}
       propertyPath: m_Name
       value: Child
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255064434615560082, guid: e4738207e829d924a8be902a855f7a24, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6255064434615560082, guid: e4738207e829d924a8be902a855f7a24, type: 3}
       propertyPath: m_IsActive
