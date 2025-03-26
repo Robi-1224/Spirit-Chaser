@@ -58,7 +58,7 @@ public class PlayerInteraction : MonoBehaviour
 
             case "Cross": hitCollider.GetComponent<Cross>().ItemBehaviour(); return;
 
-            case "Voodoo": hitCollider.GetComponent<Voodoo>().ItemBehaviour(); return;
+            case "Voodoo": hitCollider.GetComponent<Voodoo>().ItemBehaviour(); inventoryHeldItem.SetActive(false); return;
         }
     }
 
