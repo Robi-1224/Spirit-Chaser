@@ -3013,6 +3013,7 @@ MonoBehaviour:
   traps:
   - {fileID: 7062806617601732429}
   timeToActivate: 3
+  nextRoomNumber: 1
 --- !u!4 &993851976
 Transform:
   m_ObjectHideFlags: 0

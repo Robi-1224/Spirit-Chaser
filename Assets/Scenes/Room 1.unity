@@ -1801,6 +1801,7 @@ MonoBehaviour:
   traps:
   - {fileID: 7062806617601732429}
   timeToActivate: 3
+  nextRoomNumber: 2
 --- !u!4 &993851976
 Transform:
   m_ObjectHideFlags: 0
@@ -1828,6 +1829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80eee6c887b8b942ab78a0f93d65475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialText: []
 --- !u!1 &1030849873
 GameObject:
   m_ObjectHideFlags: 0

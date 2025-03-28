@@ -1895,6 +1895,7 @@ MonoBehaviour:
   - {fileID: 7062806617601732429}
   - {fileID: 1812619192}
   timeToActivate: 3
+  nextRoomNumber: 3
 --- !u!4 &993851976
 Transform:
   m_ObjectHideFlags: 0
@@ -1922,6 +1923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80eee6c887b8b942ab78a0f93d65475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialText: []
 --- !u!1 &1015737370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5031133496662478604, guid: ecf1699552741c04194652ea2278297d, type: 3}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
@@ -12,8 +13,10 @@ public class RoomManager : MonoBehaviour
     [SerializeField] List<GameObject> traps = new List<GameObject>();
 
     [SerializeField] float timeToActivate;
+    [SerializeField] int nextRoomNumber;
 
     private GameObject[] ghost;
+
     
     // Start is called before the first frame update
     void Awake()
@@ -51,5 +54,10 @@ public class RoomManager : MonoBehaviour
                 yield return wait;
             }
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene("Room " + nextRoomNumber.ToString());
     }
 }

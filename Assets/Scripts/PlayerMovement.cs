@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     PlayerInput playerInput;
     InputAction MovementInput;
+    RoomManager roomManager;
 
     Rigidbody rb;
 
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
         MovementInput = playerInput.actions.FindAction("Movement");
+        roomManager = FindAnyObjectByType<RoomManager>();
     }
 
     // Update is called once per frame
@@ -69,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
       }
       else if(other.gameObject.CompareTag("Clear room door"))
       {
-         Debug.Log("room cleared");
+         roomManager.LoadNextLevel();
       }
     }
 
