@@ -13,7 +13,6 @@ public class RoomManager : MonoBehaviour
     [SerializeField] List<GameObject> traps = new List<GameObject>();
 
     [SerializeField] float timeToActivate;
-    [SerializeField] int nextRoomNumber;
 
     private GameObject[] ghost;
 
@@ -58,6 +57,7 @@ public class RoomManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene("Room " + nextRoomNumber.ToString());
+        int nextLevel = SceneManager.GetActiveScene().buildIndex+ 1;
+        SceneManager.LoadSceneAsync(nextLevel);      
     }
 }
