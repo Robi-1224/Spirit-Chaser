@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Voodoo : MonoBehaviour
 {
-    private PlayerInteraction playerInteraction;
-    private RoomManager roomManager;
-    private GameObject heldObject;
+    protected PlayerInteraction playerInteraction;
+    protected RoomManager roomManager;
+    protected GameObject heldObject;
     private void Awake()
     {
         playerInteraction = FindAnyObjectByType<PlayerInteraction>();
         roomManager = FindAnyObjectByType<RoomManager>();
         heldObject = playerInteraction.heldObject;
     }
-    public void ItemBehaviour()
+    public virtual void ItemBehaviour()
     {
         playerInteraction.heldObject.transform.position = roomManager.ritualList[0].transform.position;
         playerInteraction.heldObject.transform.rotation = roomManager.ritualList[0].transform.rotation;
