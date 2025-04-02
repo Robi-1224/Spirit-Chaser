@@ -8,6 +8,6 @@ public class Tag : Voodoo
     {
         playerInteraction.heldObject.transform.parent = null;
         playerInteraction.heldObject = heldObject;
-        roomManager.ritualList.RemoveAt(0);
+        roomManager.ritualList.Remove(gameObject);
     }
 }
