@@ -16,7 +16,8 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.tag != gameObject.tag)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Destroy(gameObject,.3f);
         }
     }
 }

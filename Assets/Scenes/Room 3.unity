@@ -1587,7 +1587,6 @@ MonoBehaviour:
   - {fileID: 7062806617601732429}
   - {fileID: 1812619192}
   timeToActivate: 3
-  nextRoomNumber: 4
 --- !u!4 &993851976
 Transform:
   m_ObjectHideFlags: 0
@@ -3492,7 +3491,7 @@ PrefabInstance:
       objectReference: {fileID: 337851649}
     - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: interactionRange
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: inventoryHeldItem
