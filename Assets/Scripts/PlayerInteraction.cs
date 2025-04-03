@@ -26,8 +26,8 @@ public class PlayerInteraction : MonoBehaviour
     public void interact()
     {
         errorText.gameObject.SetActive(false);
-        Vector3 forward = transform.TransformDirection(Vector3.forward) * interactionRange;
-        Physics.Raycast(transform.position,forward,out hit);
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        Physics.Raycast(transform.position,forward,out hit,interactionRange);
         GameObject hitCollider = hit.collider.gameObject;
 
         if (hitCollider.CompareTag("Held item"))

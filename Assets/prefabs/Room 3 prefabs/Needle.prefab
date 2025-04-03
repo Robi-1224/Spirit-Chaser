@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 5989969783928831131}
   - component: {fileID: 3268641303598690113}
   - component: {fileID: 4752307547867084872}
-  - component: {fileID: 513401911221126159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Needle
   m_TagString: Held item
   m_Icon: {fileID: 0}
@@ -98,36 +97,13 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.2105396
+  m_Radius: 1.8008722
   m_Height: 2.7397032
   m_Direction: 1
-  m_Center: {x: 0.010699159, y: -0.018685924, z: 0}
---- !u!136 &513401911221126159
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8014229934726761699}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.1321269
-  m_Height: 2.5884128
-  m_Direction: 1
-  m_Center: {x: 0.37427193, y: -0.0037050745, z: 0.30337384}
+  m_Center: {x: -0.20073672, y: -0.018685924, z: 0}
