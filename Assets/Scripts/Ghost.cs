@@ -11,6 +11,7 @@ public class Ghost : MonoBehaviour
     [SerializeField] float timeToShoot;
     [SerializeField] int rotationSpeed;
     [SerializeField] int dashForce;
+    [SerializeField] int amountOfProj;
 
     [SerializeField] GameObject projectile;
     [SerializeField] Transform[] attackPattern;
