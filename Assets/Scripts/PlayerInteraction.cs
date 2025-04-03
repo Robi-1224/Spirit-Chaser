@@ -61,6 +61,8 @@ public class PlayerInteraction : MonoBehaviour
             case "Voodoo": hitCollider.GetComponent<Voodoo>().ItemBehaviour(); inventoryHeldItem.SetActive(false); return;
 
             case "Torri": heldObject.transform.position = hitCollider.transform.position; hitCollider.GetComponent<Tag>().ItemBehaviour(); inventoryHeldItem.SetActive(false);  return;
+
+            case "Demon": hitCollider.GetComponentInParent<Demon>().DamageRecieved(); inventoryHeldItem.SetActive(false); break;
         }
     }
 

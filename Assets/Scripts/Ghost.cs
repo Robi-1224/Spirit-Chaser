@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-  
-    [SerializeField] int speed;
     [SerializeField] float timeToShoot;
+    [SerializeField] int speed;
     [SerializeField] int rotationSpeed;
     [SerializeField] int dashForce;
-    [SerializeField] int amountOfProj;
 
     [SerializeField] GameObject projectile;
     [SerializeField] Transform[] attackPattern;
+
+    public List<GameObject> projInstance = new List<GameObject>();
 
     private Animator animator;
     private GameObject playerRef;
@@ -71,6 +71,7 @@ public class Ghost : MonoBehaviour
             {
                 var inst = Instantiate(projectile, attackPattern[i].position,Quaternion.identity);
                 inst.transform.rotation = attackPattern[i].transform.rotation;
+                projInstance.Add(inst);
             }
             yield return new WaitForSeconds(.3f);
             canMove = true;          
