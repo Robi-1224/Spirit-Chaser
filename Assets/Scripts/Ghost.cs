@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.EditorCoroutines.Editor;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ghost : MonoBehaviour
