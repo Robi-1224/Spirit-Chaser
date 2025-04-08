@@ -41,7 +41,7 @@ public class Demon : MonoBehaviour
         healthBar.localScale = healthBarSize;
         switch (health)
         {
-            case 0:  return;
+            case 0: Destroy(gameObject, .1f); return;
 
             case 1: minSpeed = 5; maxSpeed = 8;  return;
 
