@@ -4,8 +4,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public int speed;
-   
     // Update is called once per frame
+
+   
     void Update()
     {
         transform.position += transform.forward * speed * Time.deltaTime;
@@ -18,5 +19,5 @@ public class Projectile : MonoBehaviour
             gameObject.SetActive(false);
             Destroy(gameObject,.3f);
         }
-    }
+    } 
 }

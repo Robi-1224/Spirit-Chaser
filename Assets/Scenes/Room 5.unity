@@ -2632,7 +2632,7 @@ MonoBehaviour:
   traps:
   - {fileID: 7062806617601732429}
   - {fileID: 1812619192}
-  timeToActivate: 2.5
+  timeToActivate: 2
 --- !u!4 &993851976
 Transform:
   m_ObjectHideFlags: 0
@@ -2749,11 +2749,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
       propertyPath: lengthInSec
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.010550636
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5135,12 +5147,48 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
       propertyPath: lengthInSec
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: ringBufferMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: ringBufferLoopRange.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.010550636
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603262658993055786, guid: d47530f51d1550a4489d88677f3109a1, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].cycleCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5326,6 +5374,14 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 2685295787957691236, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: m_Radius
+      value: 0.18970037
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685295787957691236, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: m_Center.z
+      value: -0.037784815
+      objectReference: {fileID: 0}
     - target: {fileID: 2685295787957691238, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.97
@@ -5347,8 +5403,20 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8954612773163038276, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: m_Size.x
+      value: 0.76151216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954612773163038276, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: m_Size.y
       value: 2.1871603
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954612773163038276, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: m_Size.z
+      value: 0.8289261
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954612773163038276, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: m_Center.x
+      value: -0.001676321
       objectReference: {fileID: 0}
     - target: {fileID: 8954612773163038276, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: m_Center.y
@@ -5356,7 +5424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954612773163038276, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: m_Center.z
-      value: 0
+      value: -0.004306793
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -52,9 +52,9 @@ public class Demon : MonoBehaviour
 
     // Gets the current amount of projectiles shot, and randomizes them with the min and max speed variable.
     private IEnumerator SpeedRandomizerProjectiles()
-    {
+    {       
         while (true)
-        {         
+        {
             WaitForSeconds wait = new WaitForSeconds(waitToRandom);
             projectiles.Clear();
             yield return wait;

@@ -14,14 +14,13 @@ public class RoomManager : MonoBehaviour
 
     [SerializeField] float timeToActivate;
 
-    private GameObject[] ghost;
+    protected GameObject[] enemies;
 
     
     // Start is called before the first frame update
     void Awake()
     {
-        StartCoroutine(Traps());
-        ghost = GameObject.FindGameObjectsWithTag("Enemy");
+        StartCoroutine(Traps());    
     }
 
     // Update is called once per frame
@@ -36,7 +35,7 @@ public class RoomManager : MonoBehaviour
 
         switch (ritualList.Count)
         {
-            case <= 0 :foreach(GameObject ghost in ghost) Destroy(ghost); clearRoomDoor.SetActive(true); break;
+            case 0: DestroyAllPro(); clearRoomDoor.SetActive(true); break;
         }
     }
 
@@ -59,5 +58,11 @@ public class RoomManager : MonoBehaviour
     {
         int nextLevel = SceneManager.GetActiveScene().buildIndex+ 1;
         SceneManager.LoadSceneAsync(nextLevel);      
+    }
+
+    private void DestroyAllPro()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject ghost in enemies) Destroy(ghost);
     }
 }
