@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != gameObject.tag)
+        if (collision.gameObject.tag != "Untagged")
         {
             gameObject.SetActive(false);
             Destroy(gameObject,.3f);
