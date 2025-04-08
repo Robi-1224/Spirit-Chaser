@@ -7,7 +7,10 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject[] tutorialText;
     [SerializeField] GameObject settingsPanel;
 
-    
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void RetsartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

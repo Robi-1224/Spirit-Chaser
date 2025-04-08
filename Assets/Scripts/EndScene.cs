@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndScene : MonoBehaviour
 {
+    [SerializeField] Image endPanel;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+      StartCoroutine(EndScreenFade());
     }
-
-    // Update is called once per frame
-    void Update()
+    private IEnumerator EndScreenFade()
     {
-        
+        yield return new WaitForSeconds(3f);
+        endPanel.CrossFadeAlpha(0, 2, false);
     }
+  
 }
