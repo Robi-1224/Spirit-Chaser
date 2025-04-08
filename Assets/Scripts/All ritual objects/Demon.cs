@@ -9,8 +9,8 @@ public class Demon : MonoBehaviour
     private PlayerInteraction playerInteractionRef;
 
     [SerializeField] Transform healthBar;
-
     private GameObject heldObjectBaseRef;
+
     private List<GameObject> projectiles = new List<GameObject>();
 
     [SerializeField] int health;

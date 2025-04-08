@@ -34,7 +34,6 @@ public class PlayerInteraction : MonoBehaviour
         { 
             hitCollider.transform.parent = heldObject.transform;
             hitCollider.transform.localPosition = Vector3.zero;
-            hitCollider.transform.localRotation = heldObject.transform.rotation; 
             heldObject = hitCollider;
             inventoryHeldItem.SetActive(true);
         }
