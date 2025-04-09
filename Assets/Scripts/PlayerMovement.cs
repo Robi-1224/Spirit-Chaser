@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float lastAttack;
     private float attackCooldown = 1f;
     private Vector2 moveDir = Vector2.zero;
-
+    private AudioSource walkingSource;
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         MovementInput = playerInput.actions.FindAction("Movement");
         roomManager = FindAnyObjectByType<RoomManager>();
+        walkingSource= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Quaternion lookRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+            walkingSource.enabled= true;
+        }
+        else
+        {
+            walkingSource.enabled= false;
         }
     }
 

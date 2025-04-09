@@ -14,6 +14,8 @@ public class PlayerInteraction : MonoBehaviour
     RaycastHit hit;
     protected RoomManager roomManager;
 
+    [SerializeField] AudioClip pickUpClip;
+
     private void Awake()
     { 
        roomManager= FindAnyObjectByType<RoomManager>();
@@ -31,7 +33,9 @@ public class PlayerInteraction : MonoBehaviour
         GameObject hitCollider = hit.collider.gameObject;
 
         if (hitCollider.CompareTag("Held item"))
-        { 
+        {
+            // moves the held item into the heldItem transform of the player and activates it in the inventory
+            roomManager.audioSource.PlayOneShot(pickUpClip,1f);
             hitCollider.transform.parent = heldObject.transform;
             hitCollider.transform.localPosition = Vector3.zero;
             heldObject = hitCollider;
@@ -44,12 +48,14 @@ public class PlayerInteraction : MonoBehaviour
         }
         else if(hitCollider.CompareTag("Held item ritual") && heldObject.tag == "Untagged")
         {
+            // if the player tries to interact with the ritual object without held object the error text displays
             errorText.gameObject.SetActive(true);
         }
     }
 
     private void ItemBehaviour()
     {
+        // checks for the name of the ritual object when interacted with and gets the itembehaviour of that object, and can also set the position of the held item there
         GameObject hitCollider = hit.collider.gameObject;
         switch(hitCollider.name)
         {

@@ -8,6 +8,7 @@ public class RoomManager : MonoBehaviour
 {
     public List<GameObject> ritualList = new List<GameObject>();
     public TextMeshProUGUI objectiveLeftText;
+    public AudioSource audioSource;
 
     [SerializeField] GameObject clearRoomDoor;
     [SerializeField] List<GameObject> traps = new List<GameObject>();
@@ -16,11 +17,11 @@ public class RoomManager : MonoBehaviour
 
     protected GameObject[] enemies;
 
-    
     // Start is called before the first frame update
     void Awake()
     {
         StartCoroutine(Traps());    
+        audioSource= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
