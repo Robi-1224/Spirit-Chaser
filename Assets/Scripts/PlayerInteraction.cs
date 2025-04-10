@@ -65,11 +65,11 @@ public class PlayerInteraction : MonoBehaviour
         GameObject hitCollider = hit.collider.gameObject;
         switch(hitCollider.name)
         {
-            case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour(); audioSource.PlayOneShot(ritualSFX, 1f); return;
+            case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour();audioSource.PlayOneShot(ritualSFX, 1f); return;
 
             case "Cross": hitCollider.GetComponent<Cross>().ItemBehaviour();audioSource.PlayOneShot(ritualSFX, 1f); return;
 
-            case "Voodoo": hitCollider.GetComponent<Voodoo>().ItemBehaviour(); inventoryHeldItem.SetActive(false); return;
+            case "Voodoo": hitCollider.GetComponent<Voodoo>().ItemBehaviour(); inventoryHeldItem.SetActive(false);audioSource.PlayOneShot(ritualSFX, 1f); return;
 
             case "Torri": heldObject.transform.position = hitCollider.transform.position; hitCollider.GetComponent<Tag>().ItemBehaviour(); inventoryHeldItem.SetActive(false);  return;
 

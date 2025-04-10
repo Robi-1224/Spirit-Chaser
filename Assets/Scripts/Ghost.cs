@@ -11,7 +11,7 @@ public class Ghost : MonoBehaviour
 
     [SerializeField] GameObject projectile;
     [SerializeField] Transform[] attackPattern;
-    [SerializeField] AudioClip slashingSFX;
+    [SerializeField] AudioClip attackSFX;
 
     public List<GameObject> projInstance = new List<GameObject>();
 
@@ -68,6 +68,7 @@ public class Ghost : MonoBehaviour
         {
             WaitForSeconds wait = new WaitForSeconds(timeToShoot);
             yield return wait;
+            source.PlayOneShot(attackSFX, 1f);
             canMove = false;
             for(int i = 0; i < attackPattern.Length; i++)
             {
@@ -94,7 +95,7 @@ public class Ghost : MonoBehaviour
                 yield return wait;
                 animator.SetTrigger("melee");
                 yield return new WaitForSeconds(1.15f);
-                source.PlayOneShot(slashingSFX, 1f);
+                source.PlayOneShot(attackSFX, 1f);
                 rb.AddForce(targetPos * dashForce, ForceMode.Impulse);
                 yielding = false;
             }
