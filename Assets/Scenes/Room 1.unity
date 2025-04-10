@@ -4053,6 +4053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodStool
       objectReference: {fileID: 0}
+    - target: {fileID: 1185354936493350, guid: 50a8c5c30ff0dd44099f2416e1687ada, type: 3}
+      propertyPath: m_TagString
+      value: enviornment
+      objectReference: {fileID: 0}
     - target: {fileID: 4173861683334556, guid: 50a8c5c30ff0dd44099f2416e1687ada, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.5
@@ -4947,6 +4951,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489034235923658328, guid: d0104e6b9be4ee54da89cc94fe432793, type: 3}
+      propertyPath: attackSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d201d07d9a4ded4eb5d36e6680a4d74, type: 3}
     - target: {fileID: 7489034235923658328, guid: d0104e6b9be4ee54da89cc94fe432793, type: 3}
       propertyPath: projectile
       value: 
