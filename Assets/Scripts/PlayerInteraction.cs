@@ -14,7 +14,11 @@ public class PlayerInteraction : MonoBehaviour
     RaycastHit hit;
     protected RoomManager roomManager;
 
+    // player sfx
     [SerializeField] AudioClip pickUpClip;
+
+    // ritual specific sfx
+    [SerializeField] AudioClip candleSFX;
 
     private void Awake()
     { 
@@ -59,7 +63,7 @@ public class PlayerInteraction : MonoBehaviour
         GameObject hitCollider = hit.collider.gameObject;
         switch(hitCollider.name)
         {
-            case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour(); return;
+            case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour(); roomManager.audioSource.PlayOneShot(candleSFX, 1f); return;
 
             case "Cross": hitCollider.GetComponent<Cross>().ItemBehaviour(); return;
 
