@@ -2148,6 +2148,7 @@ MonoBehaviour:
   traps:
   - {fileID: 7062806617601732429}
   - {fileID: 1812619192}
+  exitDoorSFX: {fileID: 8300000, guid: 252aec35317384049a30f192c9535811, type: 3}
   timeToActivate: 3
 --- !u!4 &993851976
 Transform:

@@ -41,7 +41,7 @@ public class PlayerInteraction : MonoBehaviour
         if (hitCollider.CompareTag("Held item"))
         {
             // moves the held item into the heldItem transform of the player and activates it in the inventory
-            audioSource.PlayOneShot(pickUpClip,1f);
+            audioSource.PlayOneShot(pickUpClip,2f);
             hitCollider.transform.parent = heldObject.transform;
             hitCollider.transform.localPosition = Vector3.zero;
             heldObject = hitCollider;
@@ -65,15 +65,15 @@ public class PlayerInteraction : MonoBehaviour
         GameObject hitCollider = hit.collider.gameObject;
         switch(hitCollider.name)
         {
-            case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour();audioSource.PlayOneShot(ritualSFX, 1f); return;
+            case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour();audioSource.PlayOneShot(ritualSFX, 1.3f); return;
 
-            case "Cross": hitCollider.GetComponent<Cross>().ItemBehaviour();audioSource.PlayOneShot(ritualSFX, 1f); return;
+            case "Cross": hitCollider.GetComponent<Cross>().ItemBehaviour();audioSource.PlayOneShot(ritualSFX, 1.3f); return;
 
-            case "Voodoo": hitCollider.GetComponent<Voodoo>().ItemBehaviour(); inventoryHeldItem.SetActive(false);audioSource.PlayOneShot(ritualSFX, 1f); return;
+            case "Voodoo": hitCollider.GetComponent<Voodoo>().ItemBehaviour(); inventoryHeldItem.SetActive(false);audioSource.PlayOneShot(ritualSFX, 1.3f); return;
 
-            case "Torri": heldObject.transform.position = hitCollider.transform.position; hitCollider.GetComponent<Tag>().ItemBehaviour(); inventoryHeldItem.SetActive(false);  return;
+            case "Torri": heldObject.transform.position = hitCollider.transform.position; hitCollider.GetComponent<Tag>().ItemBehaviour(); audioSource.PlayOneShot(ritualSFX, 2f); inventoryHeldItem.SetActive(false);  return;
 
-            case "Demon": hitCollider.GetComponentInParent<Demon>().DamageRecieved(); inventoryHeldItem.SetActive(false); break;
+            case "Demon": hitCollider.GetComponentInParent<Demon>().DamageRecieved(); audioSource.PlayOneShot(ritualSFX, 1.3f); inventoryHeldItem.SetActive(false); break;
         }
     }
 

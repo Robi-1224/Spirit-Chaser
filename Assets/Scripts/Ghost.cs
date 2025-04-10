@@ -68,7 +68,7 @@ public class Ghost : MonoBehaviour
         {
             WaitForSeconds wait = new WaitForSeconds(timeToShoot);
             yield return wait;
-            source.PlayOneShot(attackSFX, 1f);
+            source.PlayOneShot(attackSFX, 1);
             canMove = false;
             for(int i = 0; i < attackPattern.Length; i++)
             {
@@ -95,7 +95,7 @@ public class Ghost : MonoBehaviour
                 yield return wait;
                 animator.SetTrigger("melee");
                 yield return new WaitForSeconds(1.15f);
-                source.PlayOneShot(attackSFX, 1f);
+                source.PlayOneShot(attackSFX, .8f);
                 rb.AddForce(targetPos * dashForce, ForceMode.Impulse);
                 yielding = false;
             }

@@ -2724,7 +2724,7 @@ GameObject:
   - component: {fileID: 993851978}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2749,6 +2749,7 @@ MonoBehaviour:
   traps:
   - {fileID: 7062806617601732429}
   - {fileID: 1812619192}
+  exitDoorSFX: {fileID: 8300000, guid: 252aec35317384049a30f192c9535811, type: 3}
   timeToActivate: 3
 --- !u!4 &993851976
 Transform:
@@ -2790,11 +2791,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6867b83160e9a1345a08dc019fc88ed1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.07
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3987,6 +3988,10 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6875250277860340034, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
+      propertyPath: attackSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 709fc62be53b54548a01be48c2323785, type: 3}
     - target: {fileID: 6875250277860340034, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
       propertyPath: dashForce
       value: 17
@@ -5296,7 +5301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 799905148890698841, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.63
+      value: 18.64
       objectReference: {fileID: 0}
     - target: {fileID: 799905148890698841, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5347,6 +5352,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 337851649}
     - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: ritualSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 6efe9e9bfa3a055468def04c44fb03bd, type: 3}
+    - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: pickUpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7080df905a48ff24f8935763f6dc9488, type: 3}
+    - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: interactionRange
       value: 2
       objectReference: {fileID: 0}
@@ -5395,7 +5408,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7557449f28de4ad41b4de7ae7c7f7d40, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

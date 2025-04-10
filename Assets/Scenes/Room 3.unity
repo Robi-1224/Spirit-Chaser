@@ -2175,6 +2175,7 @@ MonoBehaviour:
   traps:
   - {fileID: 7062806617601732429}
   - {fileID: 1812619192}
+  exitDoorSFX: {fileID: 8300000, guid: 252aec35317384049a30f192c9535811, type: 3}
   timeToActivate: 3
 --- !u!4 &993851976
 Transform:
@@ -2218,7 +2219,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0453a39be4996bf4d934eaf187b684a4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.09
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 1
   Mute: 0

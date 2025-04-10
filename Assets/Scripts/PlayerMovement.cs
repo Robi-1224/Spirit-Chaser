@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     {
       if (other.gameObject.CompareTag("Enemy"))
       {
-        audioSource.PlayOneShot(deathSFX, 1f);
+        audioSource.PlayOneShot(deathSFX, 2);
         gameOverPanel.SetActive(true);
         Destroy(gameObject);
 

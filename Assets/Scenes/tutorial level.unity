@@ -3062,7 +3062,7 @@ GameObject:
   - component: {fileID: 993851978}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3082,10 +3082,10 @@ MonoBehaviour:
   ritualList:
   - {fileID: 2144911372}
   objectiveLeftText: {fileID: 1793657344}
-  audioSource: {fileID: 0}
   clearRoomDoor: {fileID: 870066278}
   traps:
   - {fileID: 7062806617601732429}
+  exitDoorSFX: {fileID: 0}
   timeToActivate: 3
 --- !u!4 &993851976
 Transform:

@@ -12,6 +12,7 @@ public class RoomManager : MonoBehaviour
 
     [SerializeField] GameObject clearRoomDoor;
     [SerializeField] List<GameObject> traps = new List<GameObject>();
+    [SerializeField] AudioClip exitDoorSFX;
 
     [SerializeField] float timeToActivate;
 
@@ -36,7 +37,7 @@ public class RoomManager : MonoBehaviour
 
         switch (ritualList.Count)
         {
-            case 0: DestroyAllPro(); clearRoomDoor.SetActive(true); break;
+            case 0: DestroyAllPro(); clearRoomDoor.SetActive(true); audioSource.PlayOneShot(exitDoorSFX, .15f); break;
         }
     }
 
