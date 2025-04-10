@@ -8,7 +8,7 @@ public class RoomManager : MonoBehaviour
 {
     public List<GameObject> ritualList = new List<GameObject>();
     public TextMeshProUGUI objectiveLeftText;
-    public AudioSource audioSource;
+    private AudioSource audioSource;
 
     [SerializeField] GameObject clearRoomDoor;
     [SerializeField] List<GameObject> traps = new List<GameObject>();

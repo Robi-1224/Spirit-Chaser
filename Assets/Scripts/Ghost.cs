@@ -11,22 +11,26 @@ public class Ghost : MonoBehaviour
 
     [SerializeField] GameObject projectile;
     [SerializeField] Transform[] attackPattern;
+    [SerializeField] AudioClip slashingSFX;
 
     public List<GameObject> projInstance = new List<GameObject>();
 
     private Animator animator;
     private GameObject playerRef;
     private Rigidbody rb;
+    private AudioSource source;
 
     private Vector3 targetPos;
 
     private bool canMove = true;
+    
     // Start is called before the first frame update
     void Awake()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        source = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
 
         if(projectile != null)
         {
@@ -90,6 +94,7 @@ public class Ghost : MonoBehaviour
                 yield return wait;
                 animator.SetTrigger("melee");
                 yield return new WaitForSeconds(1.15f);
+                source.PlayOneShot(slashingSFX, 1f);
                 rb.AddForce(targetPos * dashForce, ForceMode.Impulse);
                 yielding = false;
             }

@@ -2183,7 +2183,7 @@ GameObject:
   - component: {fileID: 993851978}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2208,7 +2208,6 @@ MonoBehaviour:
   - {fileID: 652542149}
   - {fileID: 719332353}
   objectiveLeftText: {fileID: 1030849875}
-  audioSource: {fileID: 0}
   clearRoomDoor: {fileID: 1411938806}
   traps:
   - {fileID: 7062806617601732429}
@@ -5019,6 +5018,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1045263030624618661, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: deathSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 8458cacfcaf903c4c8deee7ce2028650, type: 3}
+    - target: {fileID: 1045263030624618661, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1180693993}
@@ -5046,6 +5049,10 @@ PrefabInstance:
       propertyPath: errorText
       value: 
       objectReference: {fileID: 337851649}
+    - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: ritualSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 73fb69708f65f4743adf81b4d40ce2fd, type: 3}
     - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: pickUpClip
       value: 

@@ -2033,7 +2033,7 @@ GameObject:
   - component: {fileID: 993851978}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2060,7 +2060,6 @@ MonoBehaviour:
   - {fileID: 1189097504}
   - {fileID: 1961484140}
   objectiveLeftText: {fileID: 1030849875}
-  audioSource: {fileID: 0}
   clearRoomDoor: {fileID: 1411938806}
   traps:
   - {fileID: 7062806617601732429}
@@ -2106,7 +2105,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 761884a7520092d4193ac3ab3d81c5cb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -4938,6 +4937,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6875250277860340034, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
+      propertyPath: slashingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c44f462a5d9af74ca9b353826dd387a, type: 3}
+    - target: {fileID: 6875250277860340034, guid: c16cf002e322f4f498f6c011d7ec2adf, type: 3}
       propertyPath: attackPattern.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -5007,6 +5010,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1045263030624618661, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: deathSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 8458cacfcaf903c4c8deee7ce2028650, type: 3}
+    - target: {fileID: 1045263030624618661, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1180693993}
@@ -5019,9 +5026,17 @@ PrefabInstance:
       value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: crossSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d5f57267573e45438d1ddca6a9b2716, type: 3}
+    - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: errorText
       value: 
       objectReference: {fileID: 337851649}
+    - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: ritualSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d5f57267573e45438d1ddca6a9b2716, type: 3}
     - target: {fileID: 5236998911212953625, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: pickUpClip
       value: 

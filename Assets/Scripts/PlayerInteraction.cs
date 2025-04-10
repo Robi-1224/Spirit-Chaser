@@ -13,16 +13,18 @@ public class PlayerInteraction : MonoBehaviour
 
     RaycastHit hit;
     protected RoomManager roomManager;
+    private AudioSource audioSource;
 
     // player sfx
     [SerializeField] AudioClip pickUpClip;
 
-    // ritual specific sfx
-    [SerializeField] AudioClip candleSFX;
+    //ritual sfx
+    [SerializeField] AudioClip ritualSFX;
 
     private void Awake()
     { 
        roomManager= FindAnyObjectByType<RoomManager>();
+       audioSource = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -39,7 +41,7 @@ public class PlayerInteraction : MonoBehaviour
         if (hitCollider.CompareTag("Held item"))
         {
             // moves the held item into the heldItem transform of the player and activates it in the inventory
-            roomManager.audioSource.PlayOneShot(pickUpClip,1f);
+            audioSource.PlayOneShot(pickUpClip,1f);
             hitCollider.transform.parent = heldObject.transform;
             hitCollider.transform.localPosition = Vector3.zero;
             heldObject = hitCollider;
@@ -63,9 +65,9 @@ public class PlayerInteraction : MonoBehaviour
         GameObject hitCollider = hit.collider.gameObject;
         switch(hitCollider.name)
         {
-            case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour(); roomManager.audioSource.PlayOneShot(candleSFX, 1f); return;
+            case "Candle": hitCollider.GetComponent<Candle>().ItemBehaviour(); audioSource.PlayOneShot(ritualSFX, 1f); return;
 
-            case "Cross": hitCollider.GetComponent<Cross>().ItemBehaviour(); return;
+            case "Cross": hitCollider.GetComponent<Cross>().ItemBehaviour();audioSource.PlayOneShot(ritualSFX, 1f); return;
 
             case "Voodoo": hitCollider.GetComponent<Voodoo>().ItemBehaviour(); inventoryHeldItem.SetActive(false); return;
 

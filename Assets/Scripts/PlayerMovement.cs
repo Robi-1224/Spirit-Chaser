@@ -14,11 +14,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int dashForce;
     [SerializeField] int rotationSpeed;
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] AudioClip deathSFX;
 
     private float lastAttack;
     private float attackCooldown = 1f;
     private Vector2 moveDir = Vector2.zero;
     private AudioSource walkingSource;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         MovementInput = playerInput.actions.FindAction("Movement");
         roomManager = FindAnyObjectByType<RoomManager>();
         walkingSource= GetComponent<AudioSource>();
+        audioSource = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -69,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
     {
       if (other.gameObject.CompareTag("Enemy"))
       {
+        audioSource.PlayOneShot(deathSFX, 1f);
         gameOverPanel.SetActive(true);
         Destroy(gameObject);
 

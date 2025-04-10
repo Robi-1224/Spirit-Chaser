@@ -2171,7 +2171,6 @@ MonoBehaviour:
   - {fileID: 1451956684}
   - {fileID: 703131298}
   objectiveLeftText: {fileID: 1030849875}
-  audioSource: {fileID: 0}
   clearRoomDoor: {fileID: 1411938806}
   traps:
   - {fileID: 7062806617601732429}
@@ -4812,6 +4811,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1045263030624618661, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
+      propertyPath: deathSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 8458cacfcaf903c4c8deee7ce2028650, type: 3}
     - target: {fileID: 1045263030624618661, guid: 568c1c84637a44e4a9536aa42e63f2d3, type: 3}
       propertyPath: gameOverPanel
       value: 
