@@ -6,19 +6,35 @@ public class ButtonManager : MonoBehaviour
 {
     [SerializeField] GameObject[] tutorialText;
     [SerializeField] GameObject settingsPanel;
+    [SerializeField] GameObject creditsPanel;
+    [SerializeField] GameObject pauseMenu;
     [SerializeField] AudioClip selectSound;
 
     private AudioSource audioSource;
-
 
     private void Awake()
     {
         audioSource= GetComponent<AudioSource>();
     }
 
+    public void PauseTheGame()
+    {
+        if (pauseMenu.activeSelf)
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+       
+    }
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
     public void RetsartLevel()
     {
@@ -44,6 +60,19 @@ public class ButtonManager : MonoBehaviour
         else
         {
             settingsPanel.SetActive(true);
+        }
+        audioSource.PlayOneShot(selectSound, 1);
+    }
+
+    public void OpenCredits()
+    {
+        if (creditsPanel.activeSelf)
+        {
+            creditsPanel.SetActive(false);
+        }
+        else
+        {
+            creditsPanel.SetActive(true);
         }
         audioSource.PlayOneShot(selectSound, 1);
     }

@@ -6,7 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     PlayerInput playerInput;
     InputAction MovementInput;
+    InputAction pauseInput;
     RoomManager roomManager;
+    ButtonManager buttonManager;
 
     Rigidbody rb;
 
@@ -27,8 +29,10 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
         MovementInput = playerInput.actions.FindAction("Movement");
+        pauseInput = playerInput.actions.FindAction("Pause");
         roomManager = FindAnyObjectByType<RoomManager>();
         walkingSource= GetComponent<AudioSource>();
+        buttonManager = FindAnyObjectByType<ButtonManager>();
         audioSource = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
     }
 
@@ -57,6 +61,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void PauseTheGame()
+    {
+        if (pauseInput.triggered)
+        {
+            buttonManager.PauseTheGame();
+        }
+    }
     public void Dash()
     {
         // looks if the last attack has been longer ago than the cooldown, if it is then the player dashes towards movement direction
